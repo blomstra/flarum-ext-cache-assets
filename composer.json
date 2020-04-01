@@ -1,0 +1,36 @@
+{
+    "name": "bokt/flarum-cache-assets",
+    "description": "Allows caching js and css ahead of any browser request.",
+    "keywords": [
+        "extension",
+        "flarum", "bokt",
+        "cache", "assets", "js", "css"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniël Klabbers",
+            "email": "daniel@klabbers.email",
+            "homepage": "http://luceos.com"
+        }
+    ],
+    "require": {
+        "flarum/core": "^0.1.0-beta.12"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Cache Assets",
+            "icon": {
+                "name": "fas fa-box-up",
+                "backgroundColor": "#EBF1FD",
+                "color": "#3a98d0"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Bokt\\CacheAssets\\": "src/"
+        }
+    }
+}
