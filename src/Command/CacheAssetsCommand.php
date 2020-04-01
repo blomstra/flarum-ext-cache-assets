@@ -2,6 +2,7 @@
 
 namespace Bokt\CacheAssets\Command;
 
+use Bokt\CacheAssets\Event\Cached;
 use Flarum\Console\AbstractCommand;
 use Flarum\Foundation\Application;
 use Flarum\Frontend\Assets;
@@ -69,5 +70,11 @@ class CacheAssetsCommand extends AbstractCommand
                 }
             }
         }
+
+        event(new Cached(
+            $this->input->getOption('js'),
+            $this->input->getOption('css'),
+            $this->input->getOption('locales')
+        ));
     }
 }
