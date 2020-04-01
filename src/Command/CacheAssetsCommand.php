@@ -47,7 +47,7 @@ class CacheAssetsCommand extends AbstractCommand
     {
         $this->info('Caching assets ...');
 
-        $locales = $this->locales->getLocales() ?? [];
+        $locales = array_keys($this->locales->getLocales() ?? []);
 
         foreach (['forum', 'admin'] as $frontend) {
             /** @var Assets $assets */
