@@ -4,7 +4,6 @@ namespace Bokt\CacheAssets\Command;
 
 use Bokt\CacheAssets\Event\Cached;
 use Flarum\Console\AbstractCommand;
-use Flarum\Foundation\Application;
 use Flarum\Frontend\Assets;
 use Flarum\Locale\LocaleManager;
 use Symfony\Component\Console\Input\InputOption;
@@ -15,15 +14,10 @@ class CacheAssetsCommand extends AbstractCommand
      * @var LocaleManager
      */
     private $locales;
-    /**
-     * @var Application
-     */
-    private $app;
 
-    public function __construct(LocaleManager $locales, Application $app)
+    public function __construct(LocaleManager $locales)
     {
         $this->locales = $locales;
-        $this->app     = $app;
         parent::__construct();
     }
 
@@ -51,7 +45,7 @@ class CacheAssetsCommand extends AbstractCommand
 
         foreach (['forum', 'admin'] as $frontend) {
             /** @var Assets $assets */
-            $assets = $this->app->make('flarum.assets.' . $frontend);
+            $assets = app('flarum.assets.' . $frontend);
 
             if ($this->input->getOption('js')) {
                 $this->info("Caching $frontend js file");

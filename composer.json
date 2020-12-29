@@ -16,13 +16,15 @@
         }
     ],
     "require": {
-        "flarum/core": "^0.1.0-beta.12"
+        "flarum/core": "^0.1.0-beta.15",
+        "fof/console": "*"
     },
     "extra": {
         "flarum-extension": {
             "title": "Cache Assets",
+            "category": "other",
             "icon": {
-                "name": "fas fa-box-up",
+                "name": "fas fa-box-open",
                 "backgroundColor": "#EBF1FD",
                 "color": "#3a98d0"
             }
