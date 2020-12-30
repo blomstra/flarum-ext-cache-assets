@@ -2,6 +2,13 @@
 
 namespace Bokt\CacheAssets;
 
+use Bokt\CacheAssets\Command\CacheAssetsCommand;
+use Flarum\Extend;
+use FoF\Console\Extend\EnableConsole;
+
 return [
-    new Extend\Command(Command\CacheAssetsCommand::class)
+    new EnableConsole,
+    
+    (new Extend\Console())
+        ->command(CacheAssetsCommand::class),
 ];
