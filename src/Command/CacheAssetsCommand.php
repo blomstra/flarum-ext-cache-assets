@@ -5,14 +5,9 @@ namespace Bokt\CacheAssets\Command;
 use Bokt\CacheAssets\Event\Cached;
 use Flarum\Console\AbstractCommand;
 use Flarum\Extension\ExtensionManager;
-use Flarum\Foundation\Paths;
 use Flarum\Frontend\Assets;
 use Flarum\Locale\LocaleManager;
-use Illuminate\Container\Container;
 use Symfony\Component\Console\Input\InputOption;
-
-use Flarum\Frontend\Content\Assets as AssetsContent;
-use Flarum\Frontend\RecompileFrontendAssets as Recompile;
 
 class CacheAssetsCommand extends AbstractCommand
 {
