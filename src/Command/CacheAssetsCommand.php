@@ -63,6 +63,7 @@ class CacheAssetsCommand extends AbstractCommand
                 $assets->makeCss()->commit();
 
                 if ($this->fofNightmodeEnabled()) {
+                    $this->info("Caching $frontend dark css file");
                     $assets->makeDarkCss()->commit();
                 }
             }
