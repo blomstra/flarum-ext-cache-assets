@@ -4,6 +4,7 @@ namespace Bokt\CacheAssets\Command;
 
 use Bokt\CacheAssets\Event\Cached;
 use Flarum\Console\AbstractCommand;
+use Flarum\Extension\ExtensionManager;
 use Flarum\Frontend\Assets;
 use Flarum\Locale\LocaleManager;
 use Symfony\Component\Console\Input\InputOption;
@@ -15,9 +16,15 @@ class CacheAssetsCommand extends AbstractCommand
      */
     private $locales;
 
-    public function __construct(LocaleManager $locales)
+    /**
+     * @var ExtensionManager
+     */
+    private $extensions;
+
+    public function __construct(LocaleManager $locales, ExtensionManager $extensions)
     {
         $this->locales = $locales;
+        $this->extensions = $extensions;
         parent::__construct();
     }
 
@@ -54,6 +61,11 @@ class CacheAssetsCommand extends AbstractCommand
             if ($this->input->getOption('css')) {
                 $this->info("Caching $frontend css file");
                 $assets->makeCss()->commit();
+
+                if ($this->fofNightmodeEnabled()) {
+                    $this->info("Caching $frontend dark css file");
+                    $assets->makeDarkCss()->commit();
+                }
             }
 
             if ($this->input->getOption('locales')) {
@@ -70,5 +82,10 @@ class CacheAssetsCommand extends AbstractCommand
             $this->input->getOption('css'),
             $this->input->getOption('locales')
         ));
+    }
+
+    protected function fofNightmodeEnabled(): bool
+    {
+        return $this->extensions->isEnabled('fof-nightmode') && class_exists(\FoF\NightMode\AssetsServiceProvider::class);
     }
 }
