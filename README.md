@@ -5,10 +5,11 @@ This extension offers a command `php flarum cache:assets` that allows you to com
 > This is an extension that is extremely suitable for Continuous Deployment scenarios.
 
 ### Installation
-Use [Bazaar](https://discuss.flarum.org/d/5151) or install manually with composer:
+
+Install with composer:
 
 ```sh
-composer require bokt/flarum-cache-assets
+composer require blomstra/cache-assets:*
 ```
 
 Go to your admin area and enable the extension.
@@ -21,13 +22,7 @@ Run the `php flarum cache:assets --help` command to see a list of all options, a
 `--css` to compile the less/css
 `--locales` to compile css and js of the language packs
 
-### Updating
-
-```sh
-composer require bokt/flarum-cache-assets
-```
-
 ### Links
 
-- [Packagist](https://packagist.org/packages/bokt/flarum-cache-assets)
-- [GitHub](https://github.com/bokt/flarum-cache-assets)
+- [Packagist](https://packagist.org/packages/blomstra/cache-assets)
+- [GitHub](https://github.com/blomstra/cache-assets)
