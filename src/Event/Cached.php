@@ -1,6 +1,6 @@
 <?php
 
-namespace Bokt\CacheAssets\Event;
+namespace Blomstra\CacheAssets\Event;
 
 class Cached
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Bokt\CacheAssets\Command;
+namespace Blomstra\CacheAssets\Command;
 
-use Bokt\CacheAssets\Event\Cached;
+use Blomstra\CacheAssets\Event\Cached;
 use Flarum\Console\AbstractCommand;
 use Flarum\Extension\ExtensionManager;
 use Flarum\Frontend\Assets;

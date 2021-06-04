@@ -1,14 +1,11 @@
 <?php
 
-namespace Bokt\CacheAssets;
+namespace Blomstra\CacheAssets;
 
-use Bokt\CacheAssets\Command\CacheAssetsCommand;
+use Blomstra\CacheAssets\Command\CacheAssetsCommand;
 use Flarum\Extend;
-use FoF\Console\Extend\EnableConsole;
 
 return [
-    new EnableConsole,
-    
-    (new Extend\Console())
+    (new Extend\Console)
         ->command(CacheAssetsCommand::class),
 ];
