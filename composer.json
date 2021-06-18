@@ -6,6 +6,10 @@
         "flarum", "blomstra",
         "cache", "assets", "js", "css"
     ],
+    "support": {
+        "email": "helpdesk@blomstra.net",
+        "forum": "https://blomstra.community/t/ext-cache-assets"
+    },
     "type": "flarum-extension",
     "license": "MIT",
     "authors": [
@@ -27,6 +31,9 @@
                 "backgroundColor": "#EBF1FD",
                 "color": "#3a98d0"
             }
+        },
+        "extiverse": {
+            "discuss": "https://discuss.flarum.org/d/23321"
         }
     },
     "autoload": {
