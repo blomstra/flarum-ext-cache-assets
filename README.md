@@ -25,4 +25,4 @@ Run the `php flarum cache:assets --help` command to see a list of all options, a
 ### Links
 
 - [Packagist](https://packagist.org/packages/blomstra/cache-assets)
-- [GitHub](https://github.com/blomstra/cache-assets)
+- [GitHub](https://github.com/blomstra/flarum-ext-cache-assets)
